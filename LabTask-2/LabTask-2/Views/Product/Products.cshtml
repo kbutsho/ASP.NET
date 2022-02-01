@@ -1,0 +1,17 @@
+﻿@model  List<LabTask_2.Models.Product>
+
+
+<h2>Products</h2>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>ProductName</th>
+	</tr>
+	@foreach (var p in Model)
+	{
+<tr>
+	<td>@p.Id</td>
+	<td>@p.ProductName</td>
+</tr>
+	}
+</table>

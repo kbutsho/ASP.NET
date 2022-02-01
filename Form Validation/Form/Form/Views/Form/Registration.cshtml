@@ -1,0 +1,59 @@
+﻿@model Form.Models.Form 
+@{
+	ViewBag.Title = "Registration";
+}
+<style>
+	.form-design {
+		background: bisque;
+		padding: 20px 40px;
+		border-radius: 0 20px 0 20px;
+		box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+	}
+
+	input {
+		width: 300px;
+		padding: 5px 10px;
+		display: block;
+		border: none;
+		border-radius: 5px;
+		transition: 0.5s;
+	}
+
+	textarea:focus, input:focus {
+		outline: none;
+		background: lavender;
+	}
+	span {
+		font-size: 12px;
+	}
+</style>
+<div class="d-flex justify-content-center align-items-center" style="height: 85vh">
+	<div class="form-design">
+		<h2>Form</h2>
+		<form action="/Form/Registration" method="post">
+			<input class=" my-3" type="text" name="Name" value="@Model.Name" placeholder="Name" />
+			<span>
+				@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger fw-bold" })
+			</span>
+			<input class=" my-3" type="text" name="Email" value="@Model.Email" placeholder="Email" />
+			<span>
+				@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger fw-bold" })
+			</span>
+			<input class=" my-3" type="text" name="Phone" value="@Model.Phone" placeholder="Phone" />
+			<span>
+				@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger fw-bold" })
+			</span>
+			<input class=" my-3" type="text" name="Address" value="@Model.Address" placeholder="Address" />
+			<span>
+				@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger fw-bold" })
+			</span>
+			<input class=" my-3" type="password" name="Password" value="@Model.Password" placeholder="Password" />
+			<span>
+				@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger fw-bold" })
+			</span>
+			<button class="btn btn-sm btn-danger" type="submit">Submit</button>
+		</form>
+	</div>
+</div>
+
+
