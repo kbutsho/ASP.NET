@@ -1,0 +1,61 @@
+﻿@model List<Student_Scholarship.Models.Database.Student >
+
+
+@{
+ViewBag.Title = "Student List";
+}
+
+<div class="d-flex justify-content-center align-items-center " style="min-height: 80vh">
+	
+	
+	
+	<div class="container">
+		<h2 class="text-danger my-5 text-center">All Students</h2>
+		<table class="table table-bordered">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>StudentId</th>
+				<th>Cgpa</th>
+				<th>DOB</th>
+				<th>Dept</th>
+				<th>Action</th>
+			</tr>
+			@foreach (var s in Model)
+			{
+		<tr>
+			<td>
+				@s.Id
+			</td>
+			<td>
+				@s.Name
+			</td>
+			<td>
+				@s.StudentId
+			</td>
+			<td>
+				@s.Cgpa
+			</td>
+			<td>
+				@s.DOB.ToShortDateString()
+			   
+			</td>
+			<td>
+				@s.Dept
+			</td>
+			<td>
+				<a class="btn btn-sm btn-warning px-3" href="/Student/EditStudent/@s.Id">Edit</a>
+				<a class="btn btn-sm btn-danger px-3" href="/Student/Delete/@s.Id">Delete</a>
+			</td>
+		</tr>
+			}
+		</table>
+
+	</div>
+
+
+</div>
+
+
+
+

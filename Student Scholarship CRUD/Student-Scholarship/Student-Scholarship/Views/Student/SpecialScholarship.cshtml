@@ -1,0 +1,50 @@
+﻿@model List<Student_Scholarship.Models.Database.Student>
+@{
+	ViewBag.Title = "SpecialScholarship";
+}
+
+<div class="d-flex justify-content-center align-items-center   " style="min-height: 80vh">
+
+
+
+	<div class="container">
+		<h2 class="text-center text-danger my-5">Special Scholarship Who's CGPA >= 3.5 and Age >= 30 </h2>
+		<table class="table table-bordered">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>StudentId</th>
+				<th>Cgpa</th>
+				<th>DOB</th>
+				<th>Dept</th>
+			</tr>
+			@foreach (var s in Model)
+			{
+				<tr>
+					<td>
+						@s.Id
+					</td>
+					<td>
+						@s.Name
+					</td>
+					<td>
+						@s.StudentId
+					</td>
+					<td>
+						@s.Cgpa
+					</td>
+					<td>
+						@s.DOB.ToShortDateString()
+					</td>
+					<td>
+						@s.Dept
+					</td>
+				</tr>
+			}
+		</table>
+
+	</div>
+
+
+</div>
+

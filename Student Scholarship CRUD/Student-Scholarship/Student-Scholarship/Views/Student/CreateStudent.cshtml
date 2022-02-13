@@ -1,0 +1,21 @@
+﻿@model Student_Scholarship.Models.Database.Student
+@{
+	ViewBag.Title = "CreateStudent";
+}
+
+<div class="d-flex justify-content-center align-items-center   " style="min-height: 80vh">
+	<div class="container">
+		
+		<h3 class="my-4 text-uppercase text-danger fw-bold ">Add Student</h3>
+		<form action="/Student/CreateStudent" method="post">
+			<input class="form-control my-2 w-25" type="text" placeholder="Name" name="Name" />
+			<input class="form-control my-2 w-25" type="text" placeholder="StudentId" name="StudentId" />
+			<input class="form-control my-2 w-25" type="date" placeholder="DOB" name="DOB"  /> 
+			<input class="form-control my-2 w-25" type="text" placeholder="Cgpa" name="Cgpa" />
+			<input class="form-control my-2 w-25" type="text" placeholder="Dept" name="Dept" />
+			<input type="submit" value="Add" class="btn btn-sm btn-primary px-3" />
+		</form>
+	</div>
+</div>
+
+date

@@ -1,0 +1,21 @@
+﻿@model Student_Scholarship.Models.Database.Student
+@{
+	ViewBag.Title = "Delete";
+}
+
+
+
+
+
+<form action="/Student/Delete" method="post">
+	<input type="hidden" name="Id" value="@Model.Id" />
+	
+	
+	@Model.Name <br />
+	@Model.StudentId <br />
+	@Model.DOB <br />
+	@Model.Cgpa <br />
+				<h2>Are you sure want to delete ? </h2>
+	<input type="submit" value="Delete" class="btn btn-sm btn-danger px-3" />
+</form>
+	
